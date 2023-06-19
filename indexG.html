@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New Web Page</h1>
+    <p>Click anywhere on the page to display the alert.</p>
+    <p>Press any key on the keyboard to display the key code.</p>
+    <img id="img" src="assets/first_image.jpg" alt="Original Image">
+
+    <script>
+            document.addEventListener('click', function (event) {
+                    let x = event.clientX;
+                    let y = event.clientY;
+                    alert('Clicked at  (' + x + ', ' + y + ')');
+                });
+
+            document.addEventListener('keydown', function (event) {
+                    let keyCode = event.keyCode;
+                    alert('Pressed ksy is ' + keyCode );
+                });
+
+            let image = document.getElementById('img');
+            image.addEventListener('mouseover', function(){
+                image.src = "assets/second_image.jpg"
+            })
+
+            image.addEventListener('mouseout', function () {
+                    image.src = "assets/first_image.jpg"
+                })
+
+    </script>
+</body>
+</html>

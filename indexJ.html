@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{background-color: yellow;}
+    </style>
+</head>
+<body>
+    <h1>DOM CSS class</h1>
+
+    <button onclick="newColor()">Change Color</button>
+
+    <p id="my_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim perspiciatis itaque ullam optio et error fugiat dolorum dolore quisquam tempora cum, quae officiis! Soluta iure amet placeat. Iusto, illo assumenda!</p>
+
+    <script>
+
+        function newColor(){
+          let element = document.getElementById('my_p');
+          element.classList.add("highlight");
+        }
+
+    </script>
+</body>
+</html>

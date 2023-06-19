@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <script>
+
+        const d = new Date();
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+      function getDayOfWeek(dateString) {
+            const dayOfWeek = weekday[d.getDay()];
+
+            return dayOfWeek;
+        }
+
+        const formatDate = d.toISOString().slice(0, 10);
+        let dayOfWeek = getDayOfWeek(formatDate);
+
+       document.write(getDayOfWeek(formatDate));
+       
+    </script>
+
+</body>
+</html>

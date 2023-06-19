@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Form Validation</h1>
+    <form name="newForm" onsubmit="return validate()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="password">Confirm Password:</label><br>
+        <input type="password" id="password" name="confirmpassword"><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+<script>
+
+  function validate(){
+    const form = document.forms['newForm'];
+    const name = form['name'].value;
+    const email = form['email'].value;
+    const password = form['password'].value;
+    const confirmPassword = form['confirmpassword'].value;
+
+    if(name === ''){
+        alert("You must enter your name")
+    } else if (!/^[A-Za-z]+$/.test(name)) {
+        alert("You must enter your name in letters only")
+    }
+
+    if((!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email))){
+        alert("You must enter a valid email")
+    } 
+
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+          alert("Must contain at lease 8 character,1 uppercase, i lowercase and 1 digit")
+      } 
+      
+      if(confirmPassword === ''){
+        alert("please confirm the password")
+      } else if (confirmPassword !== password){
+        alert("does  not match with previous password")
+      }
+
+return false
+  }
+
+</script>
+</html>
